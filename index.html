@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8d7e2">
+  <title>18 meses · Santiago & Stephania</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root { --wine:#702a48; --ink:#392534; --rose:#e88aa9; --blush:#fff4f6; --paper:#fffafb; --line:#efcad6; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow-x:hidden; color:var(--ink); background:var(--blush); font-family:"DM Sans",sans-serif; }
+    nav { position:fixed; z-index:10; top:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:17px clamp(20px,6vw,86px); background:rgba(255,250,251,.82); border-bottom:1px solid rgba(112,42,72,.1); backdrop-filter:blur(12px); }
+    .brand { font-family:"Playfair Display",serif; font-style:italic; color:var(--wine); font-size:1.1rem; }
+    nav a { color:var(--wine); font-size:.8rem; font-weight:700; text-decoration:none; letter-spacing:.05em; }
+    .panel { min-height:100vh; padding:105px clamp(20px,7vw,112px) 75px; display:flex; align-items:center; position:relative; overflow:hidden; }
+    .eyebrow { text-transform:uppercase; color:#a85b76; letter-spacing:.18em; font-size:.72rem; font-weight:700; margin:0 0 16px; }
+    h1,h2 { font-family:"Playfair Display",serif; font-weight:600; line-height:1.05; margin:0; }
+    h1 { font-size:clamp(3.6rem,9vw,8.5rem); color:var(--wine); }
+    h2 { font-size:clamp(2.5rem,5vw,4.9rem); color:var(--wine); }
+    .heart { color:var(--rose); }
+    .hero { background:radial-gradient(circle at 16% 15%,#fff 0,transparent 28%), linear-gradient(130deg,#ffe9ef,#f9dce6 55%,#eed0dc); }
+    .hero-content { max-width:720px; position:relative; z-index:1; }
+    .hero .subtitle { font-family:"Playfair Display",serif; font-size:clamp(1.2rem,2.4vw,1.75rem); margin:20px 0 36px; }
+    .hero .dates { display:inline-flex; align-items:center; gap:12px; color:var(--wine); font-size:.86rem; font-weight:700; letter-spacing:.08em; }
+    .hero .dates::before { content:""; width:46px; height:1px; background:currentColor; }
+    .hero-photo { position:absolute; width:min(31vw,410px); aspect-ratio:3/4; right:9vw; bottom:-32px; border:11px solid var(--paper); object-fit:cover; box-shadow:0 22px 45px #7b365349; transform:rotate(5deg); }
+    .floating-heart { position:absolute; font-size:clamp(4rem,11vw,10rem); color:#fff7fa; opacity:.7; }
+    .floating-heart.one { top:15%; right:34%; } .floating-heart.two { bottom:12%; left:8%; font-size:4rem; }
+    .letter { background:var(--paper); justify-content:center; }
+    .letter-wrap { display:grid; grid-template-columns:1fr .85fr; max-width:1180px; width:100%; gap:clamp(35px,9vw,150px); align-items:center; }
+    .letter-copy { font-family:"Playfair Display",serif; font-size:clamp(1.08rem,1.75vw,1.42rem); line-height:1.66; }
+    .letter-copy p { margin:0 0 1.1em; }
+    .signature { color:var(--wine); font-size:1.5rem; font-style:italic; margin-top:1.2em!important; }
+    .polaroid { background:#fff; padding:12px 12px 46px; box-shadow:0 18px 35px #6e3a4c27; transform:rotate(-4deg); }
+    .polaroid img { width:100%; display:block; aspect-ratio:4/5; object-fit:cover; }
+    .polaroid span { display:block; text-align:center; font-family:"Playfair Display",serif; font-style:italic; font-size:1.2rem; margin-top:14px; color:var(--wine); }
+    .poem { background:#7b304f; color:#fff6f8; text-align:center; justify-content:center; }
+    .poem::before,.poem::after { content:"♥"; position:absolute; color:#bd6e8a; font-size:25rem; line-height:1; opacity:.18; } .poem::before{left:-100px;top:-50px}.poem::after{right:-90px;bottom:-100px}
+    .poem-content { max-width:760px; position:relative; z-index:1; }
+    .poem h2 { color:#fff6f8; margin-bottom:28px; }
+    blockquote { font-family:"Playfair Display",serif; font-size:clamp(1.12rem,2vw,1.55rem); font-style:italic; line-height:1.7; margin:0; }
+    cite { display:block; font-style:normal; font-size:.9rem; margin-top:25px; letter-spacing:.08em; }
+    .memories { display:block; min-height:auto; padding-top:100px; background:#fdeef2; }
+    .section-heading { max-width:720px; margin:0 auto 45px; text-align:center; }
+    .section-heading h2 { margin-bottom:14px; } .section-heading p { margin:0; line-height:1.6; }
+    .memory { max-width:1100px; margin:0 auto 70px; display:grid; grid-template-columns:190px 1fr; gap:45px; align-items:start; }
+    .memory-label { padding-top:12px; color:var(--wine); }
+    .memory-label strong { display:block; font-family:"Playfair Display",serif; font-size:1.65rem; line-height:1.1; } .memory-label span { font-size:.82rem; }
+    .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; }
+    .gallery img { width:100%; height:250px; display:block; object-fit:cover; border-radius:4px; box-shadow:0 9px 18px #81435a18; transition:transform .3s; }
+    .gallery img:hover { transform:translateY(-6px); }
+    .gallery img:nth-child(2n) { margin-top:28px; }
+    .video-card { margin-top:26px; max-width:430px; background:#fff; padding:12px; box-shadow:0 12px 30px #81435a21; }
+    video { display:block; width:100%; max-height:440px; background:#392534; }
+    .closing { text-align:center; justify-content:center; background:linear-gradient(150deg,#f8d5e1,#fff3f6); }
+    .closing-content { max-width:750px; position:relative; z-index:1; }
+    .closing p { font-size:1.15rem; line-height:1.7; margin:26px auto 32px; max-width:560px; }
+    .love-button { border:0; background:var(--wine); color:#fff; padding:15px 24px; border-radius:100px; font-family:inherit; font-weight:700; cursor:pointer; box-shadow:0 8px 18px #7b304f42; transition:transform .2s,background .2s; }
+    .love-button:hover { background:#542038; transform:translateY(-3px); }
+    #secret { min-height:27px; margin:23px 1 4; color:var(--wine); font-family:"Playfair Display",serif; font-size:1.25rem; font-style:italic; }
+    footer { position:absolute; bottom:22px; font-size:.78rem; color:#9e6175; }
+    @media (max-width:1050px) { .hero-photo { right:5vw; width:min(34vw,360px); } .gallery { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:760px) { nav a { display:none; } .panel { min-height:auto; padding:95px 25px 60px; } .hero { align-items:flex-start; padding-top:150px; min-height:760px; } .hero-photo { width:58vw; right:8vw; bottom:45px; } .floating-heart.one { right:8%; top:11%; } .letter-wrap { grid-template-columns:1fr; } .polaroid { width:76%; margin:0 auto; } .memory { grid-template-columns:1fr; gap:14px; margin-bottom:56px; } .gallery { grid-template-columns:repeat(2,1fr); } .gallery img { height:220px; } .gallery img:nth-child(2n) { margin-top:20px; } .poem::before,.poem::after { font-size:17rem; } }
+    @media (max-width:430px) { nav { padding:15px 20px; } .panel { padding-left:20px; padding-right:20px; } .hero { min-height:690px; padding-top:125px; } .hero-photo { width:65vw; bottom:32px; border-width:8px; } .hero .subtitle { max-width:270px; } .hero .dates { max-width:270px; line-height:1.5; } h1 { font-size:3.35rem; } h2 { font-size:2.45rem; } .letter-copy { font-size:1.03rem; } .polaroid { width:88%; } .gallery { gap:10px; } .gallery img { height:175px; } .memory-label strong { font-size:1.45rem; } blockquote { font-size:1.05rem; } .love-button { width:100%; } }
+  </style>
+</head>
+<body>
+  <nav><span class="brand">Santiago &amp; Stephania</span><a href="#recuerdos">nuestros recuerdos ↓</a></nav>
+  <section class="panel hero" id="inicio">
+    <span class="floating-heart one">♥</span><span class="floating-heart two">♥</span>
+    <div class="hero-content"><p class="eyebrow">Para mi niña hermosa</p><h1>Felices<br><em>18 meses</em><span class="heart">.</span></h1><p class="subtitle">Un año y medio de risas, abrazos, besos y de elegirnos cada día.</p><span class="dates">Santiago Herrera &amp; Stephania Gonzales Cely</span></div>
+    <img class="hero-photo" src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.06%20PM.jpeg" alt="Santiago y Stephania juntos">
+  </section>
+  <section class="panel letter">
+    <div class="letter-wrap"><div><p class="eyebrow">Una carta para ti</p><h2>Otro mes más<br>contigo.</h2><div class="letter-copy"><p>Feliz mes #18. Otro mes más, un año y medio juntos literalmente. Todas las cosas que hemos pasado juntos, tantas risas y buenos momentos.</p><p>Quiero darte las gracias por cada detalle, por cada salida juntos, cada abrazo, cada beso y un montonón de cosas por agradecerte. Gracias por hacer parte de mi vida y por dejarme ser parte de la tuya.</p><p>De un día para otro pasaste de ser una compañera a ser mi novia. Me impresiona que tuviéramos mucho en común y que ambos mostráramos quiénes somos, enseñándonos cada gusto que tenemos.</p><p>Quisiera prometerte que todo será perfecto, pero lamentablemente nada es perfecto en esta vida, solo Dios. Quiero esforzarme en hacerte feliz.</p><p>Tengo claro que, en este año y medio juntos, si me hicieran volver al principio con toda la memoria que tenemos juntos, sí o sí te elegiría a ti. Asi que quise repasar varios momentos juntos.</p><p class="signature">Te amo mucho, mi niña hermosa. ♥<br>— Santiago</p></div></div><figure class="polaroid"><img src="Año_nuevo_31-12-2025/WhatsApp%20Image%202026-11-14%20at%206.22.14%20PM.jpeg" alt="Un recuerdo juntos"><span>tú, mi lugar favorito</span></figure></div>
+  </section>
+  <section class="panel poem"><div class="poem-content"><p class="eyebrow" style="color:#f3bfd0">Para Stephania</p><h2>Llevo tu corazón conmigo</h2><blockquote>“Llevo tu corazón conmigo (lo llevo en mi corazón)<br>nunca estoy sin él (tú vas dondequiera que yo voy, amor mío);<br>y todo lo que hago por mí mismo lo haces tú también, amada mía.<br><br>No temo al destino (pues tú eres mi destino, mi amor),<br>no deseo ningún mundo (pues hermosa tú eres mi mundo, mi verdad).<br><br>Y éste es el prodigio que mantiene a las estrellas separadas:<br>llevo tu corazón (lo llevo en mi corazón).”</blockquote><cite>— E. E. Cummings</cite></div></section>
+  <section class="panel memories" id="recuerdos"><div class="section-heading"><p class="eyebrow">Nuestro álbum</p><h2>Momentos que guardo<br>en el corazón.</h2><p>Algunas de nuestras historias favoritas, de todas las que todavía nos faltan por vivir.</p></div>
+    <article class="memory"><div class="memory-label"><strong>Navidad juntos</strong><span>24 · 12 · 2025</span></div><div><div class="gallery"><img src="Año_nuevo_31-12-2025/WhatsApp%20Image%202026-11-14%20at%206.22.14%20PM.jpeg" alt="Año nuevo juntos"><img src="Año_nuevo_31-12-2025/WhatsApp%20Image%202026-11-14%20at%206.22.14%20PM%20(1).jpeg" alt="Año nuevo juntos"><img src="Año_nuevo_31-12-2025/WhatsApp%20Image%202026-11-14%20at%206.22.13%20PM.jpeg" alt="Año nuevo juntos"></div><div class="video-card"><video controls preload="metadata"><source src="Año_nuevo_31-12-2025/WhatsApp%20Video%202026-11-14%20at%206.22.14%20PM.mp4" type="video/mp4"></video></div></div></article>
+    <article class="memory"><div class="memory-label"><strong>Aniversario</strong><span>15 · 05 · 2026</span></div><div class="gallery"><img src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.06%20PM.jpeg" alt="Aniversario"><img src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.06%20PM%20(1).jpeg" alt="Aniversario"><img src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.06%20PM%20(2).jpeg" alt="Aniversario"><img src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.05%20PM.jpeg" alt="Aniversario"><img src="Anniversario_15-05-2026/WhatsApp%20Image%202026-11-14%20at%206.17.05%20PM%20(1).jpeg" alt="Aniversario"></div></article>
+    <article class="memory"><div class="memory-label"><strong>Halloween</strong><span>31 · 10 · 2026</span></div><div class="gallery"><img src="Halloween_31-10-2026/WhatsApp%20Image%202026-11-14%20at%206.14.54%20PM.jpeg" alt="Halloween"><img src="Halloween_31-10-2026/WhatsApp%20Image%202026-11-14%20at%206.14.54%20PM%20(1).jpeg" alt="Halloween"><img src="Halloween_31-10-2026/WhatsApp%20Image%202026-11-14%20at%206.14.53%20PM.jpeg" alt="Halloween"><img src="Halloween_31-10-2026/WhatsApp%20Image%202026-11-14%20at%206.14.53%20PM%20(1).jpeg" alt="Halloween"></div></article>
+  </section>
+  <section class="panel closing"><div class="closing-content"><p class="eyebrow">Y vamos para largo cachetoncita ❤</p><h2>Siempre te elegiría<br>a ti<span class="heart">.</span></h2><p>Gracias por estos 18 meses, por cada momento compartido y por ser tú. Que vengan recuerdos juntos mi amor :3.</p><button class="love-button" id="love-button">Un último mensajito ♥</button><p id="secret" aria-live="polite"></p></div><footer>Hecho con todo mi amor, para mi niña :3.</footer></section>
+  <script>
+    document.getElementById('love-button').addEventListener('click', function () { document.getElementById('secret').textContent = 'Te amo hoy, mañana y en todos nuestros meses que vendran. Si te gusto el detalle te gasto un heladito, te amo 💕'; this.textContent = 'Te amo, mi vida ♥'; });
+  </script>
+</body>
+</html>
